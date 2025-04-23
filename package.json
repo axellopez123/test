@@ -10,8 +10,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "buffer": "^6.0.3",
     "react": "19.0.0",
-    "react-native": "0.79.1"
+    "react-native": "0.79.1",
+    "react-native-audio-record": "^0.2.2",
+    "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
