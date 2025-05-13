@@ -10,10 +10,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-community/audio-toolkit": "^2.0.3",
     "buffer": "^6.0.3",
     "react": "19.0.0",
     "react-native": "0.79.1",
     "react-native-audio-record": "^0.2.2",
+    "react-native-webrtc": "^124.0.5",
+    "react-native-websocket": "^1.0.2",
     "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
