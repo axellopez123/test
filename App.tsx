@@ -22,7 +22,7 @@ interface IceServer {
 }
 
 interface SignalingMessage {
-  type: "offer" | "answer" | "ice-candidate" | "server-response" | "error";
+  type: "init" | "offer" | "answer" | "ice-candidate" | "server-response" | "error";
   sdp?: string;
   candidate?: RTCIceCandidate;
   data?: any;
@@ -104,11 +104,14 @@ const WebRTCAudioApp = () => {
       console.log("WebSocket conectado");
       setStatus("Conectado al servidor");
       setWsConnected(true);
+      sendSignalingMessage({ type: "init", data: "Hola servidor" });
       getIceServers();
     };
 
     ws.current.onmessage = (event) => {
       try {
+        console.log(event.data);
+        
         const message: SignalingMessage = JSON.parse(event.data);
         try {
           handleSignalingMessage(message);
